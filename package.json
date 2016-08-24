@@ -1,0 +1,24 @@
+{
+  "name": "svg-cards-to-png",
+  "version": "0.0.0",
+  "description": "Convert SVG-cards to PNG",
+  "main": "\"\"",
+  "scripts": {
+    "test": "\"\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htdebeer/svg-cards-to-png.git"
+  },
+  "keywords": [
+    "SVG",
+    "cards",
+    "PNG"
+  ],
+  "author": "Huub de Beer",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/htdebeer/svg-cards-to-png/issues"
+  },
+  "homepage": "https://github.com/htdebeer/svg-cards-to-png#readme"
+}
