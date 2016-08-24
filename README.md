@@ -65,4 +65,4 @@ the scripts I used in this conversion.
 ## Licence
 
 The code of the converter is licenced under the
-[GPLv3])https://www.gnu.org/licenses/gpl-3.0.en.html).
+[GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
