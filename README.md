@@ -6,7 +6,7 @@ While developing a JavaScript playing card library using the nice
 [SVG-cards](https://github.com/htdebeer/SVG-cards), I found that using
 [`USE`](https://developer.mozilla.org/en/docs/Web/SVG/Element/use) elements to
 show a lot of cards performed badly. To speed things up, bitmap
-representations of the SVG cards could seemed a good idea. 
+representations of the SVG cards seemed a good idea. 
 
 I first tried converting the SVG cards to PNG in the web browser by drawing
 the [SVG dom into the HTML
