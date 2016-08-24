@@ -1,5 +1,29 @@
 # Convert SVG-cards to PNG
 
+## Rationale
+
+While developing a JavaScript playing card library using the nice
+[SVG-cards](https://github.com/htdebeer/SVG-cards), I found that using
+[`USE`](https://developer.mozilla.org/en/docs/Web/SVG/Element/use) elements to
+show a lot of cards performed badly. To speed things up, bitmap
+representations of the SVG cards could seemed a good idea. 
+
+I first tried converting the SVG cards to PNG in the web browser by drawing
+the [SVG dom into the HTML
+`CANVAS`](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Drawing_DOM_objects_into_a_canvas),
+adding an event handler to the canvas to download the rendered bitmap. To my
+surprise, however, this did not work out because of the `CANVAS` security
+constraints regarding rendering external files. Next, I switched to the
+command line and tried to convert the cards using
+[rsvg](https://developer.gnome.org/rsvg/2.40/) and
+[Inkscape](https://inkscape.org/en/). Again I was surprised: these programs do
+not render external SVG elements at all! 
+
+In the end I got the conversion working by using the
+[PhantomJS](http://phantomjs.org/) headless browser, rendering each SVG card
+in turn and saving the rendering to a PNG file. In this repository I publish
+the scripts I used in this conversion.
+
 ## Requirements
 
 - [PhantomJS](http://phantomjs.org/)
@@ -7,7 +31,8 @@
 
 ## Usage
 
-0.  Clone this repository and fetch the [SVG-cards](https://github.com/htdebeer/SVG-cards) submodule:
+0.  Clone this repository and fetch the
+    [SVG-cards](https://github.com/htdebeer/SVG-cards) submodule:
 
         git clone https://github.com/htdebeer/svg-cards-to-png.git
         cd svg-cards-to-png
