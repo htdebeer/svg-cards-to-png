@@ -22,7 +22,7 @@ not render external SVG elements at all!
 In the end I got the conversion working by using the
 [Chromium](https://www.chromium.org/) web browser in headless mode via
 [puppeteer](https://github.com/GoogleChrome/puppeteer). Each SVG card is
-rendered in turn and saves to a PNG file. In this repository I publish the
+rendered in turn and saved to a PNG file. In this repository I publish the
 scripts I used in this conversion.
 
 ## Usage
@@ -54,7 +54,7 @@ scripts I used in this conversion.
 
     Furtermore, the color of the back card will be `blue`. You can specify the
     back card's color using the `--color` or `-c` command line option. This
-    option defaults to `#0062ff`.
+    option defaults to `#0062FF`.
 
     To generate a bunch of back cards with different colors, the script
     `color_backs-svg_cards2png.js` has been created. It has the same options
@@ -69,11 +69,11 @@ scripts I used in this conversion.
     option `--directory` or `-d`, defaults to `./png`.
 
 5.  You now can use the PNG cards! Note that as the original
-    [SVG-cards](https://github.com/htdebeer/SVG-cards) are licenced under the
+    [SVG-cards](https://github.com/htdebeer/SVG-cards) are licensed under the
     [LGPLv3](https://www.gnu.org/licenses/lgpl-3.0.en.html), using the PNG
-    cards means you have to adhere to that licence as well.
+    cards means you have to adhere to that license as well.
 
-## Licence
+## License
 
-The code of the converter is licenced under the
+The code of the converter is licensed under the
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
