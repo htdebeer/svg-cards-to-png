@@ -49,14 +49,28 @@ scripts I used in this conversion.
 2.  Run the `svg_cards2png.js` script with, optionally, the
     amount you want to scale the cards. For example:
 
-        node svg_cards2png.js 2
+        svg_cards2png.js --scale 2 --directory ./png --color blue
 
     will generate cards (plus the back card) twice its natural size of
     169.075×244.64 pixels. So, these PNG files have a resolution of 338×489
-    pixels.
+    pixels. You can specify the scale using the command line option `--scale`
+    or `-s`, defaults to `1`.
+
+    Furtermore, the color of the back card will be `blue`. You can specify the
+    back card's color using the `--color` or `-c` command line option. This
+    option defaults to `#0062ff`.
+
+    To generate a bunch of back cards with different colors, the script
+    `color_backs-svg_cards2png.js` has been created. It has the same options
+    as `svg_cards2png.js`, but you can use the `--color` or `-c` color
+    multiple times. For each color, a back card with that color is generated
+    and named `back-<COLOR>.png`. If the color is a hex code, the prefix `#`
+    is removed in the name. You have to enclose a hex coded color with quote
+    (`"`) characters though.
 
 3.  Wait till the conversion is finished. The PNG files are placed in the sub
-    directory `png`.
+    directory `png`. You can specify the directory using the command line
+    option `--directory` or `-d`, defaults to `./png`.
 
 5.  You now can use the PNG cards! Note that as the original
     [SVG-cards](https://github.com/htdebeer/SVG-cards) are licenced under the

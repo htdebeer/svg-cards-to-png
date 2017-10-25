@@ -40,13 +40,13 @@ const CARDS = SUITS.reduce((cards, suit) => {
 const optionDefinitions = [
     {name: "scale", alias: "s", type: Number, defaultValue: 1},
     {name: "directory", alias: "d", type: String, defaultValue: "./png"},
-    {name: "color", alias: "c", type: String, defaultValue: "#0062ff"}
+    {name: "color", alias: "c", type: String, defaultValue: "#0062ff", multiple: true}
 ];
 const options = commandLineArgs(optionDefinitions);
 
 const directory = options["directory"];
 const scale = options["scale"];
-const color = options["color"];
+const colors = options["color"];
 
 // Create the output directory if it does not yet exist
 if (!fs.existsSync(directory)) {
@@ -57,8 +57,8 @@ if (!fs.existsSync(directory)) {
 (async () => {
     const browser = await puppeteer.launch({headless: true});
 
-    for (const cardName of CARDS) {
-        const url = `http://localhost:8080/card.html#${cardName}?scale=${scale}&color=${color}`;
+    for (const color of colors) {
+        const url = `http://localhost:8080/card.html#back?scale=${scale}&color=${color}`;
         const page = await browser.newPage();
 
         const width = CARD_WIDTH * scale;
@@ -66,7 +66,7 @@ if (!fs.existsSync(directory)) {
 
         await page.goto(url);
         await page.screenshot({
-            path: `${directory}/${cardName}.png`,
+            path: `${directory}/back-${"#" === color[0] ? color.slice(1) : color}.png`,
             clip: {
                 x: 0,
                 y: 0,
