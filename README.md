@@ -25,15 +25,11 @@ In the end I got the conversion working by using the
 rendered in turn and saves to a PNG file. In this repository I publish the
 scripts I used in this conversion.
 
-## Requirements
-
-- [PhantomJS](http://phantomjs.org/)
-- [http-server](https://github.com/indexzero/http-server)
-
 ## Usage
 
 0.  Clone this repository and fetch the
-    [SVG-cards](https://github.com/htdebeer/SVG-cards) submodule:
+    [SVG-cards](https://github.com/htdebeer/SVG-cards) submodule and install
+    the dependencies:
 
         git clone https://github.com/htdebeer/svg-cards-to-png.git
         cd svg-cards-to-png
@@ -44,12 +40,12 @@ scripts I used in this conversion.
 
 1.  Start http-server in the root directory of this project:
 
-        http-server .
+        node_modules/http-server/bin/http-server .
 
 2.  Run the `svg_cards2png.js` script with, optionally, the
     amount you want to scale the cards. For example:
 
-        svg_cards2png.js --scale 2 --directory ./png --color blue
+        ./svg_cards2png.js --scale 2 --directory ./png --color blue
 
     will generate cards (plus the back card) twice its natural size of
     169.075×244.64 pixels. So, these PNG files have a resolution of 338×489
