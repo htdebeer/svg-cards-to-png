@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/htdebeer/svg-cards-to-png/issues"
   },
-  "homepage": "https://github.com/htdebeer/svg-cards-to-png#readme"
+  "homepage": "https://github.com/htdebeer/svg-cards-to-png#readme",
+  "devDependencies": {
+    "command-line-args": "^4.0.7",
+    "puppeteer": "^0.12.0"
+  },
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
 }

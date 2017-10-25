@@ -20,9 +20,10 @@ command line and tried to convert the cards using
 not render external SVG elements at all! 
 
 In the end I got the conversion working by using the
-[PhantomJS](http://phantomjs.org/) headless browser, rendering each SVG card
-in turn and saving the rendering to a PNG file. In this repository I publish
-the scripts I used in this conversion.
+[Chromium](https://www.chromium.org/) web browser in headless mode via
+[puppeteer](https://github.com/GoogleChrome/puppeteer). Each SVG card is
+rendered in turn and saves to a PNG file. In this repository I publish the
+scripts I used in this conversion.
 
 ## Requirements
 
@@ -39,23 +40,23 @@ the scripts I used in this conversion.
         cd SVG-cards
         git fetch
         cd ..
+        npm install
 
 1.  Start http-server in the root directory of this project:
 
         http-server .
 
-2.  Run the PhantomJS script `phantom_svg_cards2png.js` with, optionally, the
+2.  Run the `svg_cards2png.js` script with, optionally, the
     amount you want to scale the cards. For example:
 
-        phantomjs phantom_svg_cards2png.js 2
+        node svg_cards2png.js 2
 
     will generate cards (plus the back card) twice its natural size of
     169.075×244.64 pixels. So, these PNG files have a resolution of 338×489
     pixels.
 
-3.  Wait till the conversion is finished. It will output an error or success
-    line for each converted card. The PNG files are placed in the same
-    directory as the PhantomJS script.
+3.  Wait till the conversion is finished. The PNG files are placed in the sub
+    directory `png`.
 
 5.  You now can use the PNG cards! Note that as the original
     [SVG-cards](https://github.com/htdebeer/SVG-cards) are licenced under the
