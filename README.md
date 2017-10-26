@@ -70,10 +70,10 @@ scripts I used in this conversion.
 
 5.  You now can use the PNG cards! Note that as the original
     [SVG-cards](https://github.com/htdebeer/SVG-cards) are licensed under the
-    [LGPLv3](https://www.gnu.org/licenses/lgpl-3.0.en.html), using the PNG
+    [LGPLv2.1](https://www.gnu.org/licenses/lgpl-2.1.en.html), using the PNG
     cards means you have to adhere to that license as well.
 
 ## License
 
 The code of the converter is licensed under the
-[GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+[LGPLv2.1](https://www.gnu.org/licenses/gpl-2.1.en.html).
