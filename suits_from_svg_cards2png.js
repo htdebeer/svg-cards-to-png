@@ -21,20 +21,20 @@ const fs = require("fs");
 const commandLineArgs = require("command-line-args");
 const puppeteer = require("puppeteer");
 
-const CARD_WIDTH = 169.075;
-const CARD_HEIGHT = 244.64;
+const SUIT_WIDTH = 15.42;
+const SUIT_HEIGHT = 15.88;
+
+const SUITS = ["club", "diamond", "spade", "heart"];
 
 // Parse command line options
 const optionDefinitions = [
     {name: "scale", alias: "s", type: Number, defaultValue: 1},
-    {name: "directory", alias: "d", type: String, defaultValue: "./png"},
-    {name: "color", alias: "c", type: String, defaultValue: "#0062ff", multiple: true}
+    {name: "directory", alias: "d", type: String, defaultValue: "./png"}
 ];
 const options = commandLineArgs(optionDefinitions);
 
 const directory = options["directory"];
 const scale = options["scale"];
-const colors = options["color"];
 
 // Create the output directory if it does not yet exist
 if (!fs.existsSync(directory)) {
@@ -45,16 +45,16 @@ if (!fs.existsSync(directory)) {
 (async () => {
     const browser = await puppeteer.launch({headless: true});
 
-    for (const color of colors) {
-        const url = `http://localhost:8080/card.html#back?scale=${scale}&color=${color}`;
+    for (const suit of SUITS) {
+        const url = `http://localhost:8080/card.html#suit-${suit}?scale=${scale}`;
         const page = await browser.newPage();
 
-        const width = CARD_WIDTH * scale;
-        const height = CARD_HEIGHT * scale;
+        const width = SUIT_WIDTH * scale;
+        const height = SUIT_HEIGHT * scale;
 
         await page.goto(url);
         await page.screenshot({
-            path: `${directory}/back-${"#" === color[0] ? color.slice(1) : color}.png`,
+            path: `${directory}/suit-${suit}.png`,
             clip: {
                 x: 0,
                 y: 0,

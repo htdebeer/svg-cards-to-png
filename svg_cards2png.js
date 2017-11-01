@@ -34,7 +34,7 @@ const CARDS = SUITS.reduce((cards, suit) => {
                 return rank + "_" + suit;
             })
         );
-}, []).concat("black_joker", "red_joker", "back");
+}, []).concat("black_joker", "red_joker", "back", "card-base");
 
 // Parse command line options
 const optionDefinitions = [

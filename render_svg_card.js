@@ -34,13 +34,20 @@ const SVG_CARDS = "SVG-cards/svg-cards.svg";
 const CARD_WIDTH = 169.075;
 const CARD_HEIGHT = 244.64;
 
+const SUIT_WIDTH = 15.42;
+const SUIT_HEIGHT = 15.88;
+
+const isSuit = function (name) {
+    return name.startsWith("suit");
+};
+
 const render = function (config) {
     const name = config.name;
     const scale = config.scale;
 
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("width", CARD_WIDTH * scale);
-    svg.setAttribute("height", CARD_HEIGHT * scale);
+    svg.setAttribute("width", (isSuit(name) ? SUIT_WIDTH : CARD_WIDTH) * scale);
+    svg.setAttribute("height", (isSuit(name) ? SUIT_HEIGHT : CARD_HEIGHT) * scale);
 
     const use = document.createElementNS(SVGNS, "use");
     use.setAttributeNS(XLINK, "xlink:href", SVG_CARDS + "#" + name);
