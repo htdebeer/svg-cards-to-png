@@ -1,6 +1,6 @@
 {
   "name": "svg-cards-to-png",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Convert SVG-cards to PNG",
   "main": "\"\"",
   "scripts": {
@@ -22,10 +22,13 @@
   },
   "homepage": "https://github.com/htdebeer/svg-cards-to-png#readme",
   "devDependencies": {
-    "command-line-args": "^4.0.7",
-    "puppeteer": "^1.20.0"
+    "command-line-args": "^6.0.2",
+    "puppeteer": "^25.3.0"
   },
   "dependencies": {
     "http-server": "^14.1.1"
+  },
+  "allowScripts": {
+    "puppeteer@25.3.0": true
   }
 }
